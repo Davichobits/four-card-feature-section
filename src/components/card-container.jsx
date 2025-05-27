@@ -13,14 +13,14 @@ export const CardContainer = () => {
       title: 'Supervisor',
       description: 'Monitors activity to identify project roadblocks',
       img: IconSupervisor,
-      borderColor: 'bg-Red',
+      borderColor: 'bg-Cyan',
     },
     {
       id: 2,
       title: 'Team Builder',
       description: 'Scans our talent network to create the optimal team for your project',
       img: IconTeamBuilder,
-      borderColor: 'bg-Cyan',
+      borderColor: 'bg-Red',
     },
     {
       id: 3,
@@ -39,21 +39,17 @@ export const CardContainer = () => {
   ]
 
   return (
-    <section className='flex flex-col gap-6'>
-      {
-        services.map(({id, title, description, img, borderColor}) => {
-          
-          return (
-          <Card 
-            key={id} 
-            title={title}
-            description={description}
-            img={img}
-            borderColor={borderColor}
-          />
-          )
-        })
-      }
+    <section className='flex flex-col gap-6 xl:flex-row xl:items-center xl:gap-[30px]'>
+
+      <Card {...services[0]} />
+
+      <div className="flex flex-col gap-6 xl:gap-[30px]">
+        <Card {...services[1]} />
+        <Card {...services[2]} />
+      </div>
+
+      <Card {...services[3]} />
+      
     </section>
   )
 }
